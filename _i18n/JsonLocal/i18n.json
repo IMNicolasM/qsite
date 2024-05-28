@@ -2162,7 +2162,7 @@
         "alreadyInUse": "Oops! It looks like the name you've chosen is already in use. Could you please try selecting a different name? We want to make sure your unique identity shines bright!",
         "usersToNotify": "Users To notify",
         "emailsToNotify": "Emails To Notify",
-        "dateCache": "Last update: {date}. Refresh whenever you want.",
+        "dateCache": "Last update at {date}.",
         "modal": {
           "welcomeMassiveSync": "Welcome to the Functionality of massive import and export!",
           "integrateCloudFramework": "We have integrated a powerful cloud-based tool. This functionality allows you to carry out these tasks easily, without complications, and in a centralized way. Optimize your processes and save time!",
@@ -4385,7 +4385,7 @@
         "alreadyInUse": "¡Ups! Parece que el nombre que has elegido ya está en uso. ¿Podrías intentar seleccionar otro nombre? ¡Queremos asegurarnos de que tu identidad única brille con fuerza!",
         "usersToNotify": "Usuarios a Notificar",
         "emailsToNotify": "Emails a Notificiar",
-        "dateCache": "Última actualización: {date}. Refresca cuando quieras.",
+        "dateCache": "Última actualización: {date}.",
         "modal": {
           "welcomeMassiveSync": "¡Bienvenido a la funcionalidad de Importación y Exportación Masiva!",
           "integrateCloudFramework": "Integramos una potente herramienta en la nube. Esta funcionalidad te permite llevar a cabo estas tareas de manera sencilla, sin complicaciones, y de forma centralizada. ¡Optimiza tus procesos y ahorra tiempo!",
