@@ -50,7 +50,7 @@
         </q-btn>
         <q-btn v-else v-bind="{...buttonProps, ...btn.props}" @click="btn.action != undefined ? btn.action() : null">
           <q-badge v-if="btn?.badge?.vIf" v-bind="{...btn?.badge }" />
-          <q-tooltip v-if="btn.label && btn.badge?.show" v-model="showExpires">{{ btn.label }}</q-tooltip>
+          <q-tooltip v-if="btn.label && btn.badge?.show" v-model="showExpires" class="tw-z-10">{{ btn.label }}</q-tooltip>
           <q-tooltip v-else-if="btn.label">{{ btn.label }}</q-tooltip>
         </q-btn>
       </div>
@@ -67,6 +67,12 @@
       v-model="exportParams"
       ref="exportComponent"
       :dynamicFilterValues="dynamicFilterValues"
+    />
+    <bulk-actions 
+      v-if="bulkActionsPermission" 
+      :dynamicFilterValues="dynamicFilterValues"
+      @bulkActionsConfig="(value) => bulkActionsConfig = value" 
+      ref="bulkActions"
     />
     <!-- Master Filter Component -->
     <!--<master-filter
@@ -87,6 +93,7 @@ import masterSynchronizable from 'modules/qsite/_components/master/masterSynchro
 //import masterFilter from 'modules/qsite/_components/master/masterFilter';
 import { eventBus } from 'src/plugins/utils';
 import appConfig from 'src/setup/app'
+import bulkActions from "modules/qsite/_components/master/bulkActions"
 
 export default {
   beforeUnmount() {
@@ -147,7 +154,7 @@ export default {
     }
   },
   */
-  components: { masterExport, masterSynchronizable },
+  components: { masterExport, masterSynchronizable, bulkActions },
   mounted() {
     this.$nextTick(function() {
       this.init();
@@ -167,7 +174,8 @@ export default {
       },
       showExpires: false,
       badgeAppear: false,
-      timeOuts: []
+      timeOuts: [],
+      bulkActionsConfig: false,
     };
   },
   watch: {
@@ -227,6 +235,15 @@ export default {
             icon: 'fa-light fa-file-arrow-down'
           },
           action: () => this.$refs.exportComponent.showReport()
+        },
+        // Bulk Actions
+        {
+          label: this.$tr('isite.cms.label.newBulkAction'),
+          vIf: this.bulkActionsPermission && this.bulkActionsConfig,
+          props: {
+            icon: 'fa-duotone fa-boxes-packing'
+          },
+          action: () => this.$refs.bulkActions.showReport()
         },
         //Tour
         {
@@ -380,6 +397,11 @@ export default {
         };
       }
       return false;
+    },
+    bulkActionsPermission() {
+      const routeParams = this.$helper.getInfoFromPermission(this.$route.meta?.permission)
+      const bulkActionsPermission = `${routeParams?.module}.${routeParams?.entity}.bulk-actions`
+      return this.$hasAccess(bulkActionsPermission)
     }
   },
   methods: {

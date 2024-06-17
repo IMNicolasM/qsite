@@ -230,6 +230,9 @@ export default {
       }
       .q-item__section--avatar {
         padding: 0 18px !important;
+        .q-icon {
+          font-size: 20px;
+        }
       }
       .q-item__section {
         font-weight: 600;
@@ -243,9 +246,6 @@ export default {
       & > .q-item {
         .q-item__section--main {
           font-size: 16px;
-        }
-        .q-icon {
-          font-size: 20px;
         }
 
         &:hover,
@@ -261,9 +261,6 @@ export default {
           & > .q-item {
             .q-item__label {
               font-size: 15px;
-            }
-            .q-icon {
-              font-size: 20px;
             }
 
             &:hover,

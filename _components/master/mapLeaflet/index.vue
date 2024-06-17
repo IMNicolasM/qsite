@@ -3,7 +3,7 @@
     <!--map--->
     <div :id="mapId" :style="`width: 100%; height : ${height}`">
       <!-- search geolocation -->
-      <div id="leaflet-search-box">
+      <div id="leaflet-search-box" class="leaflet-control-container">
         <q-select
           v-if="!readOnly"
           v-show="showSearch"
@@ -29,11 +29,11 @@
           @filter="filterFn"
           @update:modelValue="emitResponseValue()"
         >
-        <template v-slot:append v-if="address == null  || address == ''">
-          <div class="q-pa-xs">
-            <i class="fa-light fa-magnifying-glass fa-md"></i>
-          </div>
-        </template>
+          <template v-slot:append v-if="address == null  || address == ''">
+            <div class="q-pa-xs">
+              <i class="fa-light fa-magnifying-glass fa-md"></i>
+            </div>
+          </template>
         </q-select>
       </div>    
     </div>
@@ -88,8 +88,7 @@ export default defineComponent({
 }
 
 .leaflet-search-box-input {
-  max-width: 500px;
-  width: 70vw;
+  width: 230px;
 }
 
 .leaflet-search-popup {

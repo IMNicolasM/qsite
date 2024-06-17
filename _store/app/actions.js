@@ -38,27 +38,14 @@ export const CLEAR_CACHE_STORAGE = async ({}, excludedKeyList=[]) => {
 }
 
 //Refresh page
-export const REFRESH_PAGE = ({state, commit, dispatch, getters}) => {
-  return new Promise(async (resolve, reject) => {
-    let currentRoute = state.currentRoute
-    Loading.show()
-    crud.post('apiRoutes.qsite.cacheClear')
-      .then(response => {
-      }).catch(error => console.error(error))
-    commit('LOAD_PAGE', false)
-    await cache.restore(config('app.saveCache.refresh'))//Reset cache
-    //await dispatch('RESET_STORE')//Reset Vuex
-    await dispatch('quserAuth/AUTH_UPDATE', null, {root: true}).catch(error => {
-    })//Update user data
-    await dispatch('qsiteApp/GET_SITE_SETTINGS', null, {root: true}).catch(error => {
-    })//update settings sites
+export const REFRESH_PAGE = async ({state, commit, dispatch, getters}) => {
+    await Promise.allSettled([
+      crud.post('apiRoutes.qsite.cacheClear'),//Clear laravel cache
+      cache.restore(config('app.saveCache.refresh')),//Reset cache
+      dispatch('quserAuth/AUTH_UPDATE', null, {root: true}),//Update user data
+      dispatch('qsiteApp/GET_SITE_SETTINGS', null, {root: true})//update settings sites
+    ])
     dispatch('qsiteApp/SET_SITE_COLORS', null, {root: true})//Load colors
-    commit('LOAD_PAGE', true)
-    dispatch('CLEAR_CACHE_STORAGE', ['compile-time-precache'])
-    Loading.hide()
-    
-    resolve(true)
-  })
 }
 
 export const DELETE_SW = async () => {

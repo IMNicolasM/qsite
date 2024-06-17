@@ -1534,9 +1534,13 @@
           "exportReady": "Your <b>{fileName}</b> report is Ready!",
           "noOrganization": "You do not belong to an organization",
           "wantToCreateAChildForm": "¿Do you want to create a child form of",
-          "refreshAppVersion": "We are excited to introduce new features and enhancements in this version. Click the update button to enjoy the latest experience.",
+          "refreshAppVersion": "We are excited to introduce new features and improvements in this version. Updates are being downloaded automatically so you can enjoy the latest experience without any interruptions.",
           "updateAvailable": "New Update Available!",
-          "updateNow": "Update now"
+          "updateNow": "Update now",
+          "cacheCleanupMessage": "Clearing the cache can free up space and resolve some issues. The application may take a little longer to load the data next time as it will generate a new cache.",
+          "dispatchBulkAction": "Dispatch <b class=\"text-blue-grey\">{pageTitle}</b> bulk action",
+          "errorDispatchingAction": "Error dispatching action",
+          "actionSuccessfullyDispatched": "Action successfully dispatched"
         },
         "startTime": "Start time",
         "endTime": "End time",
@@ -1923,7 +1927,11 @@
           "whatsappNumber": "Whatsapp Number",
           "codeCountry": "Code country",
           "defaultMessage": "Default message",
-          "trial": "Trial"
+          "trial": "Trial",
+          "cacheCleanup": "Cache Cleanup",
+          "newBulkAction": "New Bulk Action",
+          "history": "History",
+          "dispatch": "Dispatch"
         },
         "message": {
           "requestAdded": "Request added to the offline queue successfully",
@@ -1996,7 +2004,7 @@
           "finishRegister": "There is little left to finish your registration...",
           "ready": "Ready",
           "noRegistered": "You are not registered yet",
-          "hintFilterByQuery": "Type 3 or more characters to search for options",
+          "hintFilterByQuery": "Type 2 or more characters to search for options",
           "invalidFormat": "Invalid format",
           "specialCharactersAreNotAllowed": "Special characters are not allowed",
           "configureThisSection": "configure This section",
@@ -2011,7 +2019,9 @@
           "creatingTenant": "We are excited to let you know that we are in the process of creating your site! We appreciate your patience while we provide you with an improved online experience. as soon as everything is ready, we will take you to your site!",
           "advanceEdit": "Advanced Edit",
           "organizationCreated": "We are pleased to inform you that your site is ready! We are excited to provide you with an improved online experience. You can access your new site by clicking the button below. If you have any questions or need help, please do not hesitate to contact us. We hope you enjoy exploring your new site!",
-          "showDemo": "Demo"
+          "showDemo": "Demo",
+          "inProgress": "In progress",
+          "failed": "Failed"
         },
         "form": {
           "whatsappNumber": "Número de Whatsapp",
@@ -3761,9 +3771,13 @@
           "noOrganization": "Todavía no perteneces a una organización",
           "wantToCreateAChildForm": "¿Quieres crear un formulario hijo de",
           "copyDisclosureLink": "El enlace de divulgación se ha copiado en el portapapeles",
-          "refreshAppVersion": "Estamos emocionados de presentar nuevas funciones y mejoras en esta versión. Haga clic en el botón de actualización para disfrutar de la última experiencia.",
+          "refreshAppVersion": "Estamos emocionados de presentar nuevas funciones y mejoras en esta versión. Las actualizaciones se están descargando automáticamente para que puedas disfrutar de la última experiencia sin ninguna interrupción.",
           "updateAvailable": "¡Nueva actualización disponible!",
-          "updateNow": "Actualizar ahora"
+          "updateNow": "Actualizar ahora",
+          "cacheCleanupMessage": "Limpiar la caché puede liberar espacio y resolver algunos problemas. La aplicación puede tardar un poco más en cargar los datos la próxima vez, ya que generará una nueva caché.",
+          "dispatchBulkAction": "Acción masiva de envío de <b class=\"text-blue-grey\">{pageTitle}</b>",
+          "errorDispatchingAction": "Error al despachar acción",
+          "actionSuccessfullyDispatched": "Acción despachada con éxito"
         },
         "startTime": "Hora de inicio",
         "endTime": "Hora de finalización",
@@ -4148,7 +4162,11 @@
           "informationTitle": "Información del sitio",
           "trial": "Versión de prueba",
           "copyDisclosureLink": "Copiar enlace",
-          "print": "Imprimir"
+          "print": "Imprimir",
+          "cacheCleanup": "Limpieza de Caché",
+          "newBulkAction": "Nueva acción masiva",
+          "history": "Historial",
+          "dispatch": "Despachar"
         },
         "message": {
           "requestAdded": "Petición agregada a la cola sin conexión",
@@ -4220,7 +4238,7 @@
           "finishRegister": "Falta poco para terminar tu registro",
           "ready": "Todo está listo",
           "noRegistered": "Aún no estás registrado",
-          "hintFilterByQuery": "Escribe 3 o más caracteres para buscar opciones",
+          "hintFilterByQuery": "Escribe 2 o más caracteres para buscar opciones",
           "invalidFormat": "Formato invalido",
           "specialCharactersAreNotAllowed": "No se permiten caracteres especiales",
           "configureThisSection": "Configura esta sección",
@@ -4235,7 +4253,9 @@
           "organizationNoCreated": "¡Estamos emocionados de contarte que estamos en el proceso de crear tu sitio! Agradecemos tu paciencia mientras te brindamos una experiencia en línea mejorada. tan pronto todo este listo, recibirás una notificación por correo electrónico",
           "creatingTenant": "¡Estamos emocionados de contarte que estamos en el proceso de crear tu sitio! Agradecemos tu paciencia mientras te brindamos una experiencia en línea mejorada. tan pronto todo este listo, te llevaremos a tu sitio!",
           "organizationCreated": "¡Nos complace informarte que tu sitio está listo! Estamos emocionados de brindarte una experiencia en línea mejorada. Puedes acceder a tu nuevo sitio haciendo clic en el siguiente boton. Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos. ¡Esperamos que disfrutes explorando tu nuevo sitio!",
-          "advanceEdit": "Edición Avanzada"
+          "advanceEdit": "Edición Avanzada",
+          "inProgress": "En progreso",
+          "failed": "Fallido"
         },
         "form": {
           "whatsappNumber": "Número de Whatsapp",

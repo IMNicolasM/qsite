@@ -64,16 +64,19 @@ export default function controller(props: any, emit: any) {
     },
     //Handler to click over map
     async getMarkerInfo(lat, lng) {
+      state.searchLoading = true
+      state.address = null
+      state.geolocations = []
       const info = {label: '', lat, lng}
       const query = `${lat}, ${lng}`
-      await state.searchProvider.search({query}).then((results) => {              
+      await state.searchProvider.search({query}).then((results) => {
         if(results.length){
           const item = results[0]
           info.label = item.label != '' ? item.label : item?.raw.display_name
           if(info.label){
-            // state.geolocations = []
-            state.marker.bindPopup(info.label, {className: 'leaflet-search-popup'})
-                        .openPopup();
+            const mapWidth = state.map.getSize().x
+            const maxWidth = mapWidth > 700 ? 600 : (mapWidth - 80) //fix popup width
+            state.marker.bindPopup(info.label, {maxWidth}).openPopup();
             //state.marker.bindTooltip(info.label).openTooltip();
           }
         }
@@ -81,6 +84,7 @@ export default function controller(props: any, emit: any) {
       if(!props.polygonControls){ // emits only points
         emit('update:modelValue', info)
       }
+      state.searchLoading = false
       return info
     },
     async emitResponseValue() {

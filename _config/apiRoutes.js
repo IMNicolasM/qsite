@@ -22,5 +22,7 @@ export default {
   logs: `${urlBase}/logs`,
   synchronizables: `${urlBase}/synchronizables`,
   generateFile: `${urlBase}/synchronizables/generate-spread-sheet`,
-  sync: `${urlBase}/synchronizables/sync`
+  sync: `${urlBase}/synchronizables/sync`,
+  logs: `${urlBase}/logs`,
+  bulkActions: `${urlBase}/bulk-actions`,
 }

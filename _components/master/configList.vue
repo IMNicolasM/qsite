@@ -192,7 +192,13 @@
       </div>
 
       <!--Clear Cache-->
-      <div class="q-px-sm cursor-pointer q-pt-md" @click="$router.push({name: 'app.update.app'})">
+      <div 
+        class="q-px-sm cursor-pointer q-pt-md" 
+        @click="$router.push({
+          name: 'app.update.app', 
+          query: { fromCache: 1 }
+        })"
+      >
         <q-icon color="primary" size="18px" name="fas fa-broom" class="q-mr-sm" />
         {{ $t('isite.cms.configList.clearCache', { capitalize: true }) }}
       </div>

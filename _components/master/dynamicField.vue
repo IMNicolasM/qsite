@@ -135,8 +135,8 @@
           </template>
         </q-input>
         <!--Date range -->
-        <dateRangePicker v-if="loadField('dateRange')" 
-                         v-model="responseValue" 
+        <dateRangePicker v-if="loadField('dateRange')"
+                         v-model="responseValue"
                          :fieldProps="fieldProps"
                          :label="fieldLabel"
                          :class="`${field.help ? 'full-date-dynamic-field' : ''}`"
@@ -279,9 +279,9 @@
           <upload-image v-model="responseValue" v-bind="fieldProps.field"/>
         </q-field>
         <!--Media-->
-        <q-field 
-          v-model="responseValue" 
-          v-if="loadField('media') && configModules('main.qmedia.moduleName')" 
+        <q-field
+          v-model="responseValue"
+          v-if="loadField('media') && configModules('main.qmedia.moduleName')"
           label=""
           class="field-no-padding no-border media-dinamyc-field"
           v-bind="fieldProps.fieldComponent"
@@ -375,13 +375,13 @@
               tw-w-full
               tw-p-3.5
             '
-            :style="{ 
+            :style="{
               borderColor: fieldProps.colorValue,
               backgroundColor: `${fieldProps.colorValue}1A`
             }"
           >
             <!--content-->
-            <div 
+            <div
               class='tw-flex tw-items-center'
               :class="{
                 'tw-mb-2': fieldProps.actions.length > 0
@@ -391,7 +391,7 @@
               <q-icon
                 v-if="fieldProps.icon"
                 :name="fieldProps.icon"
-                :color="fieldProps.color || 'info'" 
+                :color="fieldProps.color || 'info'"
                 size="26px"
               />
               <!--message-->
@@ -709,7 +709,7 @@ export default {
           break;
         case'dateRange':
           //Instance the mask
-          const maskDateRange = props?.mask ? `${props.mask} - ${props.mask}` : 'YYYY/MM/DD - YYYY/MM/DD'          
+          const maskDateRange = props?.mask ? `${props.mask} - ${props.mask}` : 'YYYY/MM/DD - YYYY/MM/DD'
 
           props = {
             field: {
@@ -1519,7 +1519,7 @@ export default {
 
           //Add Params to get options by query
           if (loadOptions && loadOptions.filterByQuery) {
-            if (query && (query.length > 2)) {
+            if (query && (query.length >= 2)) {
               params.params.filter.search = query
               params.params.take = 25
             } else {
@@ -1687,7 +1687,7 @@ export default {
 
       //Hint message for filterByQuery
       if (loadOptions && loadOptions.filterByQuery) {
-        if (val.length > 2) {
+        if (val.length >= 2) {
           if (!this.rootOptions.length) {
             this.fieldProps.hint = `${this.$tr('isite.cms.message.noResultsFoundTryAnotherSearchValue')}`
           }

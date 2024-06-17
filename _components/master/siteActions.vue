@@ -252,7 +252,10 @@ export default {
               ...this.defaultButtonProps,
               icon: "fa-light fa-broom",
             },
-            action: () => this.$router.push({name: 'app.update.app'})
+            action: () => this.$router.push({
+              name: 'app.update.app', 
+              query: { fromCache: 1 }
+            })
           },
         ],
         menu: [
