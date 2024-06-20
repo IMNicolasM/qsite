@@ -57,6 +57,17 @@
         "moveMedia": "Move Media",
         "selectMedia": "Select Media",
         "newNotification": "New Notification",
+        "markAsRead": "Mark as read",
+        "markAllAsRead": "Mark all as read",
+        "tab": {
+          "all": "All",
+          "unread": "Unread",
+          "read": "Read"
+        },
+        "type": "Type",
+        "cancel": "Cancel",
+        "openLink": "Open link",
+        "seeAll": "See All",
         "form": {
           "altAttribute": "Alt Attribute",
           "keyWords": "Key words",
@@ -2420,6 +2431,17 @@
         "moveMedia": "Mover Media",
         "selectMedia": "Seleccionar Media",
         "newNotification": "Nueva Notificación",
+        "markAsRead": "Marcar como leida",
+        "markAllAsRead": "Marcar como leidas",
+        "tab": {
+          "all": "Todas",
+          "unread": "Sin leer",
+          "read": "Leidas"
+        },
+        "type": "Tipo",
+        "cancel": "Cancelar",
+        "openLink": "Abrir enlace",
+        "seeAll": "Ver todas",
         "form": {
           "altAttribute": "Attributo Alt",
           "keyWords": "Palabras Claves",

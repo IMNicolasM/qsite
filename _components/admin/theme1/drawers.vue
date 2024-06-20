@@ -39,10 +39,7 @@
     </q-drawer>
 
     <!--Notification-->
-    <q-drawer bordered id="dawerNotificatiosMaster" v-model="drawer.notification" side="right" overlay
-              v-if="$hasAccess('notification.notifications.manage')">
-      <master-notifications/>
-    </q-drawer>
+    <master-notifications :is-open="drawer.notification" :isMobile="this.windowSize == 'mobile' ? true : false"/>
 
     <!--Offline-->
     <q-drawer bordered id="drawerOfflineMaster" v-model="drawer.offline" side="right" overlay

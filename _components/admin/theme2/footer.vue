@@ -96,8 +96,7 @@
               <q-item-section class="ellipsis">{{ $trp('isite.cms.label.recommendation') }}</q-item-section>
             </q-item>
             <!--Notification action-->
-            <q-item clickable v-ripple @click.native="eventBus.emit('toggleMasterDrawer','notification')"
-                    v-if="$hasAccess('notification.notifications.manage')">
+            <q-item clickable v-ripple @click.native="eventBus.emit('toggleMasterDrawer','notification')">
               <q-item-section avatar>
                 <q-icon color="primary" name="fa-light fa-bell"/>
               </q-item-section>

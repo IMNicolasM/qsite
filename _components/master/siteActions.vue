@@ -36,9 +36,9 @@
           <!-- Tooltip -->
           <q-tooltip>{{ btn.label }}</q-tooltip>
           <!-- Badge -->
-          <q-badge 
-            v-if="btn.badgeLabel || btn.badge" 
-            :color="btn.badgeColor || 'orange'" 
+          <q-badge
+            v-if="btn.badgeLabel || btn.badge"
+            :color="btn.badgeColor || 'orange'"
             rounded floating
           >
             {{ btn.badgeLabel }}
@@ -215,7 +215,6 @@ export default {
           {
             name: 'notifications',
             label: this.$trp('isite.cms.label.notification'),
-            vIf: this.$hasAccess('notification.notifications.manage'),
             badge: this.badge.notification,
             props: {
               ...this.defaultButtonProps,
@@ -253,7 +252,7 @@ export default {
               icon: "fa-light fa-broom",
             },
             action: () => this.$router.push({
-              name: 'app.update.app', 
+              name: 'app.update.app',
               query: { fromCache: 1 }
             })
           },
