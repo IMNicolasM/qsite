@@ -19,8 +19,8 @@
           <b>{{ title }}</b>
         </div>
         <!--Close Button-->
-        <q-btn v-close-popup icon="fa-light fa-xmark" round textColor="blue-grey" unelevated class="btn-medium"
-                v-if="!hideCloseAction" />
+        <q-btn v-close-popup icon="fa-light fa-xmark" round textColor="grey-7" unelevated class="btn-medium"
+                v-if="!hideCloseAction" size="14px" dense />
       </div>
       <q-separator inset />
       <!--Slot content-->
@@ -28,8 +28,9 @@
         <slot />
       </div>
       <!--Actions Content-->
-      <div class="master-dialog__actions" v-if="actions && actions.length">
+      <div class="master-dialog__actions tw-pb-3.5" v-if="actions && actions.length">
         <div class="row justify-end q-gutter-sm">
+          <q-separator class="full-width tw-mb-1.5"/>
           <template v-for="(btn, keyBtn) in actions" :key="keyBtn">
             <q-btn
               v-if="btn.props?.vIf != undefined ? btn.props?.vIf : true"
@@ -52,7 +53,7 @@ export default {
     modelValue: { type: Boolean, default: false },
     loading: { type: Boolean, default: false },
     persistent: { type: Boolean, default: false },
-    color: { type: String, default: 'blue-grey' },
+    color: { type: String, default: 'grey-9' },
     width: { type: String, default: '400px' },
     title: { type: String },
     icon: { type: String },
