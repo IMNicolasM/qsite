@@ -28,8 +28,8 @@
         <slot />
       </div>
       <!--Actions Content-->
-      <div class="master-dialog__actions tw-pb-3.5" v-if="actions && actions.length">
-        <div class="row justify-end q-gutter-sm">
+      <div class="master-dialog__actions" v-if="actions && actions.length">
+        <div class="row justify-end q-gutter-sm tw-mb-1.5">
           <q-separator class="full-width tw-mb-1.5"/>
           <template v-for="(btn, keyBtn) in actions" :key="keyBtn">
             <q-btn
