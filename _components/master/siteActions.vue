@@ -49,7 +49,7 @@
       <q-btn v-if="quserState.authenticated && (configMode == 'iadmin')" id="profileButton" rounded no-caps
              padding="2px 8px" color="white" unelevated>
         <div id="profileImage" class="img-as-bg"
-             :style="`background-image: url('${profileImage.smallThumb}')`"></div>
+             :style="`background-image: url('${profileImage.smallThumb || defaultImgUser}')`"></div>
         <div class="q-ml-xs q-mr-sm text-blue-grey">{{ quserState.userData.firstName }}</div>
         <q-icon name="fas fa-chevron-down" size="14px" color="blue-grey"/>
         <!--Menu-->
@@ -61,7 +61,7 @@
                 <!--Image profile-->
                 <div class="text-center">
                   <q-avatar size="72px" class="q-mx-auto">
-                    <img :src="profileImage.mediumThumb">
+                    <img :src="profileImage.mediumThumb || defaultImgUser">
                   </q-avatar>
                 </div>
                 <!--User Data-->
@@ -121,7 +121,8 @@ export default {
         class: "btn-small",
         textColor: "blue-grey",
         noCaps: true
-      }
+      },
+      defaultImgUser: 'defaultUser.jpg'
     }
   },
   computed: {
