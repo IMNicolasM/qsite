@@ -15,7 +15,7 @@
           <q-btn :to="{name: 'user.profile.me'}" flat no-caps v-if="quserState.authenticated"
                  class="item-icon" padding="none">
             <q-avatar size="20px">
-              <img :src="quserState?.userData?.mainImage">
+              <img :src="quserState?.userData?.mainImage || 'defaultUser.jpg'">
             </q-avatar>
           </q-btn>
           <div>{{ $tr('isite.cms.label.profile') }}</div>
@@ -28,9 +28,9 @@
         </div>
         <!-- go to site -->
         <div id="footerMobileGoToSite" class="item-footer col cursor-pointer bg"
-             @click="$helper.openExternalURL($store.state.qsiteApp.baseUrl)">
-          <q-icon class="item-icon" name="fa-light fa-eye"/>
-          <div>{{ $tr('isite.cms.configList.goToSite') }}</div>
+             @click="showGoToSiteButton ? $helper.openExternalURL($store.state.qsiteApp.baseUrl) : $router.push({ name: 'notification.admin.notificationIndex' })">
+          <q-icon class="item-icon" :name="`${showGoToSiteButton ? 'fa-light fa-eye' : 'fa-light fa-bell' }`"/>
+          <div>{{ $tr(`${showGoToSiteButton ? 'isite.cms.configList.goToSite' : 'isite.cms.label.notification'}`) }}</div>
         </div>
         <!-- Others -->
         <div id="footerMobileOthers" class="item-footer col cursor-pointer" @click="modal.show = true">
@@ -64,7 +64,7 @@
               <q-item-section class="ellipsis">{{ $tr('isite.cms.label.setting') }}</q-item-section>
             </q-item>
             <!--Offline-->
-            <q-item clickable v-ripple @click.native="eventBus.emit('toggleMasterDrawer','offline')">
+            <q-item clickable v-ripple v-if="$store.state.qofflineMaster.isAppOffline" @click.native="eventBus.emit('toggleMasterDrawer','offline')">
               <q-item-section avatar>
                 <q-icon color="primary" name="fa-light fa-wifi-slash"/>
               </q-item-section>
@@ -95,7 +95,7 @@
               <q-item-section class="ellipsis">{{ $trp('isite.cms.label.recommendation') }}</q-item-section>
             </q-item>
             <!--Notification action-->
-            <q-item clickable v-ripple @click.native="eventBus.emit('toggleMasterDrawer','notification')">
+            <q-item clickable v-ripple v-if="showGoToSiteButton" @click.native="$router.push({ name: 'notification.admin.notificationIndex' })">
               <q-item-section avatar>
                 <q-icon color="primary" name="fa-light fa-bell"/>
               </q-item-section>
@@ -153,6 +153,9 @@ export default {
     //Return params of subHeader
     params() {
       return this.currentRoute.meta.subHeader || {}
+    },
+    showGoToSiteButton() {
+      return this.$getSetting('isite::showGoToSiteButton') || false;
     },
   },
   methods: {
