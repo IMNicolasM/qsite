@@ -177,6 +177,7 @@ export default {
     background-color: $custom-accent-color !important;
   }
   #menuMaster {
+    background-color: $primary !important;
     #logoSite {
       padding: 20px 25px 26px 25px;
       height: 120px;
@@ -186,46 +187,47 @@ export default {
       padding: 3px 15px;
       font-size: 13px;
     }
-    .q-expansion-item {
-      background-color: $custom-accent-color !important;
+    .q-expansion-item, .q-expansion-item .content-item{
+      background-color: $primary !important;
     }
     .q-expansion-item__container {
       .q-expansion-item__content {
         padding: 0 0 0 2px;
-        border-left: 15px solid $custom-accent-color;
+        border-left: 15px solid $primary;
       }
+    }
+    .q-item__section--side .q-icon {
+      color: white;
     }
     .q-item {
       padding-left: 0;
       min-height: 40px;
-      color: $blue-grey;
+      color: white;
       .q-item__section--avatar {
         padding: 0 18px !important;
         .q-icon {
           font-size: 20px;
-          color: $blue-grey;
+          color: white;
         }
       }
       &:hover {
-        background-color: $grey-4;
-        color: $primary;
+        background-color: $secondary;
+        color: white;
         .q-icon {
-          color: $primary;
           font-size: 16px;
         }
       }
       &.item-is-active {
-        background-color: $custom-accent-color;
-
+        background-color: $secondary;
         .q-item__section,
         .q-icon {
-          color: $primary;
+          color: white;
         }
 
       }
     }
     .expansion-selected {
-      background-color: $primary;
+      background-color: $secondary;
     }
   }
 }

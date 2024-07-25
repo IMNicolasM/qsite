@@ -15,7 +15,7 @@
           <q-btn :to="{name: 'user.profile.me'}" flat no-caps v-if="quserState.authenticated"
                  class="item-icon" padding="none">
             <q-avatar size="20px">
-              <img :src="quserState?.userData?.mainImage">
+              <img :src="quserState?.userData?.mainImage || 'defaultUser.jpg'">
             </q-avatar>
           </q-btn>
           <div>{{ $tr('isite.cms.label.profile') }}</div>
